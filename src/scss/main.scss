@@ -1,5 +1,11 @@
-@import "./mixins/margin";
-@import "./mixins/padding";
+@import "src/scss/color";
+@import "src/scss/mixins/margin";
+@import "src/scss/mixins/padding";
+@import "src/scss/mixins/shadow";
+@import "src/scss/mixins/grid";
+@import "src/scss/align";
+@import "src/scss/form";
 
 @include custom-margin(100);
 @include custom-padding(100);
+@include custom-width(100);

@@ -1,0 +1,20 @@
+form {
+  label, label span {
+    font-size: 14px;
+    color: $font-color;
+  }
+
+  .input-text {
+    color: $font-color;
+    font-size: 14px;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

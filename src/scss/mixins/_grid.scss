@@ -1,0 +1,7 @@
+@mixin custom-width($value) {
+  @for $i from 1 through $value {
+    .width-#{$i} {
+      width: #{$i+unquote("%")};
+    }
+  }
+}
