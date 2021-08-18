@@ -1,0 +1,24 @@
+@mixin custom-margin($value) {
+  @for $i from 1 through $value {
+    .mx-#{$i} {
+      margin-left: #{$i+unquote("px")};
+      margin-right: #{$i+unquote("px")};
+    }
+    .my-#{$i} {
+      margin-top: #{$i+unquote("px")};
+      margin-bottom: #{$i+unquote("px")};
+    }
+    .ml-#{$i} {
+      margin-left: #{$i+unquote("px")};
+    }
+    .mt-#{$i} {
+      margin-top: #{$i+unquote("px")};
+    }
+    .mr-#{$i} {
+      margin-right: #{$i+unquote("px")};
+    }
+    .mb-#{$i} {
+      margin-bottom: #{$i+unquote("px")};
+    }
+  }
+}
