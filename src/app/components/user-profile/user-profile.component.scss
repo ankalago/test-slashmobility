@@ -2,37 +2,26 @@
 @import "src/scss/color";
 
 .profile {
-  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  margin-top: 50px;
 
-  border: 0;
-  border-radius: $border-radius;
-  color: $gray-dark;
-  background: $white-color;
-  width: calc(100% - 2em);
-  padding: 1em;
+  &-avatar {
+    margin: -50px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    max-width: 130px;
+    max-height: 130px;
 
-  &-card {
-    margin-top: 50px;
+    @include shadow-big();
 
-    &-avatar {
-      margin: -50px auto 0;
-      border-radius: 50%;
-      overflow: hidden;
-      padding: 0;
-      max-width: 130px;
-      max-height: 130px;
-
-      @include shadow-big();
-
-      img {
-        width: 100%;
-        height: auto;
-      }
+    img {
+      width: 100%;
+      height: auto;
     }
+  }
 
-    &-body {
-      margin-top: 40px;
-    }
+  &-body {
+    margin-top: 40px;
   }
 }
 

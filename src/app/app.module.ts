@@ -8,6 +8,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from './components/shared/material/material.module';
 import { ContentComponent } from './components/content/content.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { MapsComponent } from './components/maps/maps.component';
+import { MapsModule } from './components/maps/maps.module';
+import { FormatLanLngPipe } from './components/shared/pipes/format-lan-lng.pipe';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     HeaderComponent,
     ContentComponent,
     UserProfileComponent,
+    MapsComponent,
+    FormatLanLngPipe,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    MapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

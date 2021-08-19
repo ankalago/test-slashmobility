@@ -1,0 +1,25 @@
+<div class="card map">
+  <div class="row">
+    <div class="col-xs-12">
+      <google-map height="380px"
+                  width="100%"
+                  [center]="center"
+                  [zoom]="zoom">
+        <map-marker #mapMarker="mapMarker"
+                    [position]="center"
+                    (mapClick)="openInfoWindow(mapMarker)"
+                    *ngIf="center.lat && center.lng"
+        ></map-marker>
+        <map-info-window>
+          <p><b>Latitude:</b> {{ center.lat | formatLanLng }}</p>
+          <p><b>Longitude:</b> {{ center.lng | formatLanLng }}</p>
+        </map-info-window>
+      </google-map>
+    </div>
+  </div>
+  <div class="row mt-20">
+    <div class="col-xs-offset-0 col-xs-12 col-md-offset-6 col-md-6 text-right">
+      <button mat-raised-button color="primary" type="submit" (click)="getLocation()">Get my location</button>
+    </div>
+  </div>
+</div>
