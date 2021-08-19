@@ -1,13 +1,5 @@
 <div class="card profile">
-  <div class="profile-avatar">
-    <button *ngIf="imgFile" mat-mini-fab color="primary" (click)="file.click()" type="button" class="profile-avatar-edit">
-      <mat-icon>edit</mat-icon>
-    </button>
-    <div class="profile-avatar-image">
-      <img *ngIf="!imgFile" class="img point" src="./assets/img/faces/user.png" (click)="file.click()" />
-      <img *ngIf="imgFile" class="img" [src]="imgFile" />
-    </div>
-  </div>
+  <app-avatar (file)="addFileSuccess(file)" [imgFile]="profileForm.value['image']"></app-avatar>
   <div class="profile-body">
     <form autocomplete="off" [formGroup]="profileForm" novalidate (ngSubmit)="sendForm()">
       <div class="row">

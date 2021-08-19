@@ -38,7 +38,6 @@ export class UserProfileComponent implements OnInit {
   onImageChange(event: any): void {
     const reader = new FileReader();
     if (event.target.files && event.target.files.length) {
-      console.log('************* event.target.files: ', event.target.files);
       const [file] = event.target.files;
       reader.readAsDataURL(file);
       reader.onload = () => {
@@ -48,6 +47,10 @@ export class UserProfileComponent implements OnInit {
         });
       };
     }
+  }
+
+  addFileSuccess(file: HTMLInputElement): void {
+    file.click();
   }
 
 }

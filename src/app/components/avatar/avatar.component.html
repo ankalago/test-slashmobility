@@ -1,0 +1,9 @@
+<div class="avatar">
+  <button *ngIf="imgFile" mat-mini-fab color="primary" (click)="addFile()" type="button" class="avatar-edit">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <div class="avatar-image">
+    <img *ngIf="!imgFile" class="img point" src="./assets/img/faces/user.png" (click)="addFile()" />
+    <img *ngIf="imgFile" class="img" [src]="imgFile" />
+  </div>
+</div>

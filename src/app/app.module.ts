@@ -12,6 +12,7 @@ import { MapsComponent } from './components/maps/maps.component';
 import { MapsModule } from './components/maps/maps.module';
 import { FormatLanLngPipe } from './components/shared/pipes/format-lan-lng.pipe';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AvatarComponent } from './components/avatar/avatar.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     UserProfileComponent,
     MapsComponent,
     FormatLanLngPipe,
+    AvatarComponent,
   ],
   imports: [
     BrowserModule,

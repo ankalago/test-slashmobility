@@ -1,0 +1,33 @@
+@import "../scss/mixins/shadow";
+
+.avatar {
+  position: relative;
+  margin: -50px auto 0;
+  width: 130px;
+  height: 130px;
+  padding: 0;
+
+  &-image {
+    border-radius: 50%;
+    overflow: hidden;
+    padding: 0;
+    width: 130px;
+    height: 130px;
+    background: white;
+    @include shadow-big();
+
+    img {
+      width: 100%;
+      height: auto;
+
+      &.point {
+        cursor: pointer;
+      }
+    }
+  }
+
+  &-edit {
+    position: absolute;
+    right: 0;
+  }
+}
