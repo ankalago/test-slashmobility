@@ -1,38 +1,52 @@
 <div class="card profile">
   <div class="profile-avatar">
-    <a href="javascript:void(0)">
-      <img class="img" src="./assets/img/faces/user.png" />
-    </a>
+    <button *ngIf="imgFile" mat-mini-fab color="primary" (click)="file.click()" type="button" class="profile-avatar-edit">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <div class="profile-avatar-image">
+      <img *ngIf="!imgFile" class="img point" src="./assets/img/faces/user.png" (click)="file.click()" />
+      <img *ngIf="imgFile" class="img" [src]="imgFile" />
+    </div>
   </div>
   <div class="profile-body">
-    <form>
+    <form autocomplete="off" [formGroup]="profileForm" novalidate (ngSubmit)="sendForm()">
       <div class="row">
         <div class="col-xs-12 col-md-6">
           <mat-form-field class="width-100 input-text">
-            <input matInput placeholder="Username" type="text" autocomplete="off" />
+            <input matInput placeholder="Username" type="text" formControlName="username" />
+            <mat-error *ngIf="profileForm.controls['username'].hasError('required')">
+              Last name is <strong>required</strong>
+            </mat-error>
           </mat-form-field>
         </div>
         <div class="col-xs-12 col-md-6">
           <mat-form-field class="width-100 input-text">
-            <input matInput placeholder="Email" type="text" autocomplete="off" />
+            <input matInput placeholder="Email" type="email" formControlName="email" />
+            <mat-error *ngIf="profileForm.controls['email'].hasError('required')">
+              Email is <strong>required</strong>
+            </mat-error>
+            <mat-error *ngIf="profileForm.controls['email'].hasError('email')">
+              Email is <strong>wrong</strong>
+            </mat-error>
           </mat-form-field>
         </div>
       </div>
       <div class="row mt-20">
         <div class="col-xs-12 col-md-6">
-          <mat-radio-group class="width-100 options">
-            <mat-radio-button value="1">Male</mat-radio-button>
-            <mat-radio-button value="2">Female</mat-radio-button>
+          <mat-radio-group class="width-100 options" formControlName="gender" color="primary">
+            <mat-radio-button value="male">Male</mat-radio-button>
+            <mat-radio-button value="female">Female</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
       <div class="row mt-20">
         <div class="col-xs-12">
           <mat-form-field class="width-100 input-text">
-            <textarea matInput placeholder="Bio" rows="7"></textarea>
+            <textarea matInput placeholder="Bio" rows="7" formControlName="bio"></textarea>
           </mat-form-field>
         </div>
       </div>
+      <input accept="image/*" type="file" id="file" formControlName="file" (change)="onImageChange($event)" #file style="display: none">
       <div class="row mt-20">
         <div class="col-xs-offset-0 col-xs-12 col-md-offset-6 col-md-6 text-right">
           <button mat-raised-button color="primary" type="submit">Save</button>

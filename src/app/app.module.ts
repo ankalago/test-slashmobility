@@ -11,6 +11,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { MapsComponent } from './components/maps/maps.component';
 import { MapsModule } from './components/maps/maps.module';
 import { FormatLanLngPipe } from './components/shared/pipes/format-lan-lng.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FormatLanLngPipe } from './components/shared/pipes/format-lan-lng.pipe'
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    MapsModule
+    MapsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
