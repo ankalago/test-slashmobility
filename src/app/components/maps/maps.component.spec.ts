@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MapsComponent } from './maps.component';
+import { FormatLanLngPipe } from '../shared/pipes/format-lan-lng.pipe';
 
 describe('MapsComponent', () => {
   let component: MapsComponent;
@@ -8,7 +9,7 @@ describe('MapsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MapsComponent ]
+      declarations: [ MapsComponent, FormatLanLngPipe ]
     })
     .compileComponents();
   });
