@@ -19,7 +19,11 @@
   </div>
   <div class="row mt-20">
     <div class="col-xs-offset-0 col-xs-12 col-md-offset-6 col-md-6 text-right">
-      <button mat-raised-button color="primary" type="submit" (click)="getLocation()">Get my location</button>
+      <button mat-raised-button color="primary" type="submit" (click)="getLocation()" [disabled]="isLoading">
+        <mat-icon *ngIf="isLoading" class="spinning">sync</mat-icon>
+        Get my location
+        <mat-icon>place</mat-icon>
+      </button>
     </div>
   </div>
 </div>

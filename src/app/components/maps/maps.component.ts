@@ -10,6 +10,7 @@ import { MapsService } from './maps.service';
 export class MapsComponent implements OnInit {
   @ViewChild(MapInfoWindow) infoWindow!: MapInfoWindow;
 
+  isLoading = false;
   center: google.maps.LatLngLiteral = { lat: 0, lng: 0 };
   zoom = 1;
 
@@ -19,9 +20,11 @@ export class MapsComponent implements OnInit {
   }
 
   async getLocation(): Promise<any> {
+    this.isLoading = true;
     this.mapsService.getPosition().then(lanLng => {
       this.center = lanLng;
       this.zoom = 15;
+      this.isLoading = false;
     });
   }
 
